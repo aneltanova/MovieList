@@ -1,0 +1,157 @@
+body{
+    font-family: Arial, sans-serif;
+    overflow: auto;
+    background-color: #1a1e27;
+    width: 100%;
+    height: 100%;
+}
+
+.welcome_page{
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+    line-height: 60px;
+    position: absolute;
+    font-size: 25pt;
+    color: white;
+}
+
+.movie_list_container{
+    margin-left: 60px;
+    width: 1200px;
+    height: auto;
+    padding: 5%;
+
+}
+
+.movie{
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 300px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.3);
+    color: white;
+    background-color: #1F2B33;
+    text-align: center;
+    margin: 20px;
+    margin-bottom: 60px;
+}
+
+.screen{
+    position: absolute;
+    float: left;
+    width: 170px;
+    height: 220px;
+    top: -60px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.3);
+    background-color: #1F2B33;
+    margin: 15px;
+    /*margin-bottom: 15px;*/
+}
+
+.poster{
+    position: relative;
+    margin-top: 2.5px;
+    width: 165px;
+    height: 215px;
+    /*margin-bottom: 15px;*/
+}
+
+.movie_info{
+    line-height: 10px;
+    text-align: left;
+    font-weight: bold;
+    position: absolute;
+    font-size: 10pt;
+    color: white;
+    bottom: 5px;
+    left: 15px;
+}
+
+.title{
+    font-size: 13pt;
+    color:#84abb3;
+}
+
+.rate{
+    font-size: 12pt;
+    color:#84abb3;
+    opacity: 0.7;
+}
+
+.movie:hover {
+    z-index:1;
+    transform:scale(1.05);
+    box-shadow:0px 0px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.navbar{
+    position: sticky;
+    height: 90px;
+    width: 85%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+    margin-left: 8%;
+}
+
+#logo{
+    float:left;
+    height: 70px;
+    margin-top: 15px;
+    width: auto;
+}
+
+hr{
+    border-top: 1px solid #6798A2;
+    width: 85%;
+    opacity: 0.5;
+}
+
+ul{
+    list-style-type: none;
+    background-color: inherit;
+    height: 90px;
+    /*margin-top: 35px;*/
+    /*display:inline-block;*/
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    line-height: 90px;
+    width: 120px;
+    margin-bottom: 10px;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.bar_item :hover {
+    border-bottom: 3px solid #6798A2;
+}
+
+.bar_item :active {
+    border-bottom: 3px solid #6798A2;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#out{
+    margin-top: 25px;
+    height: 40px;
+    width: 45px;
+    border-bottom: none;
+}
+
+/*#trash{*/
+/*    height: 40px;*/
+/*    width: 40px;*/
+/*}*/

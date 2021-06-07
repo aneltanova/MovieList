@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title> Movie List </title>
+  <link th:href="@{~/index.css}" rel="stylesheet">
+  <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/food-drink-60/50/1F37F-popcorn-512.png">
+
+</head>
+
+<body>
+
+  <div class="navbar">
+    <img th:unless="${session.username == null}" id="logo"  th:src="logo.png">
+      <ul>
+          <li th:unless="${session.username == null}" ><a th:href="@{logout}"><img id="out" th:src="out.png"></a></li>     <!--  log out-->
+
+          <div th:unless="${session.username != null}">
+          <li class="bar_item"><a th:href="@{reg}">Sign Up</a></li>           <!--  reg-->
+          <li class="bar_item"><a th:href="@{log}">Log In</a></li>               <!--  log in-->
+          </div>
+
+          <li th:unless="${session.username == null}" class="bar_item"><a th:href="@{main}">All Movies</a></li>
+          <li class="bar_item"><a style="color: #6798A2;" th:href="@{main}" th:text="${session.username}" th:unless="${session == null}">[...]</a></li>
+
+      </ul>
+  </div>
+  <hr>
+
+  <div th:unless="${session.username != null}">
+      <div class="welcome_page" >
+          Hello there, you are on <br>
+          <img th:src="logo.png"><br>
+          But firstly you need to log in to see movie list.
+      </div>
+  </div>
+
+  <div th:unless="${session.username == null}">
+      <div class="movie_list_container">
+
+          <div class="movie"  th:each="movie : ${movies}">
+              <div class="screen"><img class="poster" th:src="${movie.poster}"></div>
+<!--              <div class="poster"><img class="screen" th:src="default.png"></div>-->
+              <div class="movie_info">
+                  <p class="title" th:text="${movie.name}"></p>
+                  <p th:text="${movie.genre + ', '+ movie.release_date}"></p>
+                  <p th:text="${movie.director}"></p>
+                  <p class="rate" th:text="${movie.rating}"></p>
+              </div>
+<!--              <button class="add">+</button>-->
+          </div>
+      </div>
+
+  </div>
+</body>
+
+</html>

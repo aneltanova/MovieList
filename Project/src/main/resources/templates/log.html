@@ -1,0 +1,101 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <title> Log in </title>
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/food-drink-60/50/1F37F-popcorn-512.png">
+<!--    <link rel="stylesheet" th:href="@{~/reg.css}">-->
+    <style>
+        body{
+            font-family: Roboto, sans-serif;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            background-image: url("bck.jpg");
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+
+        .maincontainer{
+            color: #0b161b;
+            width: 400px;
+            height: 500px;
+            position: relative;
+            margin: 6% auto;
+            background-color: rgb(255, 255, 255);
+            padding: 5px;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow:1px 1px 15px rgba(0,0,0,0.8);
+        }
+
+        h1{
+            margin-top: 30px;
+            text-align: center;
+            position: relative;
+            font-weight: bold;
+            font-size: 20pt;
+        }
+
+        .input{
+            top: 150px;
+            position: absolute;
+            width: 250px;
+            transition: .5s;
+
+        }
+
+        .inputfield{
+            width: 100%;
+            padding: 10px 0;
+            margin: 10px 0;
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.5);
+            font-size: 11pt;
+            background: transparent;
+            outline: none;
+        }
+
+        label{
+            font-size: 12px;
+            color: #1D2A38;
+        }
+
+        .submit{
+            width: 90%;
+            padding: 10px 30px;
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+            background: #1a1e27;
+            border-radius: 20px;
+            border: 0;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+
+        .submit:active{
+            opacity: .7;
+        }
+
+        #login{
+            left: 80px;
+        }
+
+    </style>
+  </head>
+
+  <body> 
+        <div class = "maincontainer">
+            <h1>LOG IN</h1>
+            <form id = "login" class = "input" th:action="@{/log}" method="post">
+                <input id = "usernamelog" name = "usernamelog" type="text" class = "inputfield" placeholder="Username" required>
+                <input id = "passwordlog" name = "passwordlog" type="password" class = "inputfield" placeholder="Password" required>
+                <input class="submit" type="submit" value="Sign in" >
+            </form>
+        </div>
+  </body>
+</html>
